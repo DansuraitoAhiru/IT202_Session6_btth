@@ -78,4 +78,5 @@ JOIN Users u ON u.user_id = b.user_id
 JOIN Hotels h ON h.hotel_id = b.hotel_id
 WHERE b.status = 'COMPLETED' AND b.total_price > 0
 GROUP BY u.user_id, u.user_name, h.rating
-HAVING total_amount > 50000000; 
+HAVING total_amount > 50000000
+ORDER BY h.rating DESC, total_amount DESC; 
